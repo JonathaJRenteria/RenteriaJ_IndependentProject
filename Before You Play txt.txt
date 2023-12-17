@@ -1,0 +1,27 @@
+----------------------------------------			
+		Controls
+
+W Move forward 
+A Move Left
+S Move Back
+D Move Right
+
+Mouse Controls Camera
+
+L SHIFT Move Fast
+
+ALT SHIFT F4 Force Quit
+-----------------------------------------
+		Rules
+
+Collect all 383 Glowing Shperes to win the game
+
+-------------------------------------------
+		Story
+
+Along time ago Consumer Man raided your town and stole everyones Glowing Orbs including
+your dads Cherries. Now that your old enough you seek out to return what was stolen for
+Vengenace.
+
+--------------------------------------------
+ 
