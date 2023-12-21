@@ -8,6 +8,7 @@ TagManager:
   - Teleporter
   - CollectibleSphere
   - PlayerCollectCollider
+  - Cherry
   layers:
   - Default
   - TransparentFX
