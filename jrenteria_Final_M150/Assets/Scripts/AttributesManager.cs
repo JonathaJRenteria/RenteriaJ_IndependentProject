@@ -41,5 +41,26 @@ public class AttributesManager : MonoBehaviour
         gameObject.SetActive(false);
         gameManager.gameOver("GameOverScene");
     }
+
+    // Method to restore health
+    public void RestoreHealth(int amount)
+    {
+        // Add logic to ensure health doesn't exceed maxHealth
+        health += amount;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+
+        // Update Health UI
+        if (healthUI != null)
+        {
+            healthUI.UpdateHealthUI(health, maxHealth);
+        }
+    }
 }
+
+
+
+
 

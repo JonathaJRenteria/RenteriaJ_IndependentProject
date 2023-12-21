@@ -2,15 +2,33 @@ using UnityEngine;
 
 public class PowerUpInteraction : MonoBehaviour
 {
+    public int healthRestoreAmount = 10;  // Adjust this value based on your design
+    public HealthUI healthUI;  // Make sure to assign this reference in the Inspector
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Perform any actions you want when the player interacts with the power-up
-            Debug.Log("Player interacted with Power Up!");
+            AttributesManager attributesManager = other.GetComponent<AttributesManager>();
 
-            // Destroy the Power Up sphere
-            Destroy(gameObject);
+            if (attributesManager != null && healthUI != null)
+            {
+                Debug.Log("Current Health: " + attributesManager.health);
+                Debug.Log("Max Health: " + attributesManager.maxHealth);
+                Debug.Log("Can Gain Heart: " + healthUI.CanGainHeart());
+
+                if (healthUI.CanGainHeart())
+                {
+                    Debug.Log("Player can gain a heart. Restoring health!");
+                    attributesManager.RestoreHealth(healthRestoreAmount);
+                    healthUI.UpdateHealthUI(attributesManager.health, attributesManager.maxHealth);
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Debug.Log("Player cannot gain a heart.");
+                }
+            }
         }
     }
 }
