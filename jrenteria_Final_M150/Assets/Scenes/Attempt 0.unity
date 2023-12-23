@@ -4481,6 +4481,7 @@ MonoBehaviour:
   gameOverUI: {fileID: 1446665961}
   totalSpheres: 191
   collectedSpheres: 0
+  hasCollectedCherry: 0
 --- !u!4 &1446665963
 Transform:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+// GameManager.cs
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,8 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverUI;
     public int totalSpheres = 0; // Set the total number of spheres in the Inspector
     public int collectedSpheres = 0; // Change visibility to public
+
+    public bool hasCollectedCherry = false; // New variable to track cherry collection
 
     // Cache cursor values for optimization
     private bool cursorVisible;
@@ -47,7 +50,30 @@ public class GameManager : MonoBehaviour
     // Make BeatGame method public
     public void BeatGame()
     {
-        // Add any logic you need when the player beats the game
+        if (hasCollectedCherry)
+        {
+            AlternativeEnding(); // Call the alternative ending method
+        }
+        else
+        {
+            RegularEnding(); // Call the regular ending method
+        }
+    }
+
+    // New method for the alternative ending
+    private void AlternativeEnding()
+    {
+        // Add any logic you need for the alternative ending
+        Debug.Log("Congratulations! You collected the cherry and achieved the alternative ending.");
+
+        // Load the alternative ending scene or your desired scene
+        SceneManager.LoadScene("AlternativeEndingScene");
+    }
+
+    // Regular ending method (you can customize this)
+    private void RegularEnding()
+    {
+        // Add any logic you need for the regular ending
         Debug.Log("Congratulations! You collected all spheres and beat the game.");
 
         // Load the victory scene or your desired scene
