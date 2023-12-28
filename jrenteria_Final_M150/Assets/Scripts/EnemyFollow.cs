@@ -25,3 +25,4 @@ public class EnemyFollow : MonoBehaviour
         enemy.destination = player.position;
     }
 }
+
